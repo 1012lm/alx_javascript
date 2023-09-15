@@ -6,13 +6,10 @@ class SquareWithCharPrint extends Square {
       c = 'X';
     }
 
-    let squareStr = '';
     for (let i = 0; i < this.height; i++) {
-      squareStr += c.repeat(this.width) + '\n';
+      console.log(c.repeat(this.width));
     }
-    console.log(squareStr.trim());
   }
 }
 
-const s1 = new SquareWithCharPrint(5);
-s1.charPrint('D');
+module.exports = SquareWithCharPrint;
