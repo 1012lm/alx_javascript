@@ -9,6 +9,10 @@ const myObject = {
     this.value++;
   };
   
+  myObject.incr.toString = function() {
+    return '[Function]';
+  };
+  
   myObject.incr();
   console.log(myObject);
   myObject.incr();
