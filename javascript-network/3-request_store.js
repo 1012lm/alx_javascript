@@ -11,9 +11,7 @@ request.get(url, (error, response, body) => {
     fs.writeFile(filePath, body, { encoding: 'utf-8' }, (err) => {
       if (err) {
         console.error(err);
-      } else {
-        console.log(`File "${filePath}" saved successfully.`);
-      }
+      } 
     });
   } else {
     console.log('Error fetching webpage');
