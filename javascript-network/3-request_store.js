@@ -2,7 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 const url = process.argv[2];
-const filePath = 'w_file_0';
+const filePath = process.argv[3];
 
 request.get(url, (error, response, body) => {
   if (error) {
@@ -12,10 +12,7 @@ request.get(url, (error, response, body) => {
       if (err) {
         console.error(err);
       } else {
-        console.log(`[Got]\nFile "${filePath}" saved successfully.`);
-        console.log(body.trim());
-        console.log(`(${body.trim().length} chars long)`);
-        console.error('');
+        console.log(`File "${filePath}" saved successfully.`);
       }
     });
   } else {
