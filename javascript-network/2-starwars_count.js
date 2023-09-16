@@ -8,9 +8,16 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
   } else if (response.statusCode === 200) {
     const films = JSON.parse(body).results;
-    const count = films.filter((film) =>
-      film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-    ).length;
+    let count = 0;
+
+    films.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(`/${characterId}/`)) {
+          count++;
+        }
+      });
+    });
+
     console.log(count);
   } else {
     console.log('Error fetching movie data');
